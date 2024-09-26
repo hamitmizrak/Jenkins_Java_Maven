@@ -15,11 +15,8 @@ colors=(
     "\033[36m" # Camgöbeği
 )
 
-########################################################################################################################################
-########################################################################################################################################
 
-# Bash scriptlere izin vermek
-chmod +x ./countdown.sh
+
 
 ########################################################################################################################################
 ########################################################################################################################################
@@ -52,14 +49,10 @@ project_version() {
     echo -e "\n${colors[2]}Docker Version ... "
     docker version
 
-    # Geriye Say
-    ./countdown.sh
-
     docker search jenkins
     docker ps
     docker run -p 2225:8080 -p 50005:50000 --name docker_jenkins5 jenkins/jenkins
     winpty docker exec -it docker_jenkins bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
-
 }
 
 project_version
